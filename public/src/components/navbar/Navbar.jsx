@@ -93,16 +93,16 @@ const authenticatedContextMenuOptions = [
     },
   },
 ];
-  return (
+return (
   <header className="w-full flex flex-col justify-center transition-all duration-300 h-20 border-b border-b-gray-200">
-  <div className="flex items-center justify-between px-20">
-  <div className="flex-grow basis-0">
-  <div className="w-max cursor-pointer">
-        <AirBnbLogo/>
-    </div>
-    </div>
-    <div className="flex-grow basic-0">
-      <ul className="flex items-center justify-end gap-6 font-medium">
+    <div className="flex items-center justify-between px-4 md:px-20">
+      <div className="flex-grow basis-0">
+        <div className="w-max cursor-pointer" onClick={() => router.push("/")}>
+          <AirBnbLogo />
+        </div>
+      </div>
+      <div className="flex-grow basis-0">
+        <ul className="flex items-center justify-end gap-6 font-medium">
         {
           userInfo?.id &&
         <li 
@@ -136,24 +136,23 @@ const authenticatedContextMenuOptions = [
           )}
         </li>
       </ul>
-    </div>
-    </div>
-    {
-      isContextMenuVisibile && (
-      <ContextMenu 
-      contextMenu={isContextMenuVisibile}
-      setContextMenu={setisContextMenuVisibile}
-      cordinates={{
-        x:window.innerWidth - 250,
-        y: 70,
-      }} 
-      options={
-         userInfo ? authenticatedContextMenuOptions: contextMenuOptions
-        }
-      />
+      </div>
+      </div>
+      {isContextMenuVisibile && (
+        <ContextMenu
+          contextMenu={isContextMenuVisibile}
+          setContextMenu={setisContextMenuVisibile}
+          coordinates={{
+            x: window.innerWidth - 250,
+            y: 70,
+          }}
+          options={
+            userInfo ? authenticatedContextMenuOptions : contextMenuOptions
+          }
+        />
       )}
     </header>
- );
+  );
 };
 
 export default Navbar;

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .control-panel {
@@ -17,19 +16,23 @@
     width: 100% !important;
     max-width: none !important;
   }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar for Chrome, Safari and Opera
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-}
+} */
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Hide scrollbar for IE, Edge and Firefox
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+  /* scrollbar-width: none; Firefox */
+/* } */ */
 
 .control-panel {
   position: absolute;

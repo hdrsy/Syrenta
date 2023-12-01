@@ -24,7 +24,7 @@ const ListingCard = ({
      wishListsPage,
      setWishListsPage,
   } = useAppStore();
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const router = useRouter();
 
   const deleteListing = async () => {
@@ -48,62 +48,53 @@ const ListingCard = ({
   };  
 
   return (
-    <div className="flex items-center justify-center flex-col gap-1"
-     onClick={()=>router.push(`/listing/${data.id}`)}
-    >
-      <div className="flex items-center justify-center cursor-pointer w-full">
-        <div className="flex flex-col gap-2">
-          <div className="relative w-64 h-56">
-            {data?.photos?.length && (
-              <Image 
-              src={data.photos[0]} 
-              fill 
-              alt="listing" 
-              className="rounded-lg object-cover" 
+    <div className="flex flex-col items-center justify-center gap-4 cursor-pointer w-full max-w-md mx-auto"
+         onClick={() => router.push(`/listing/${data.id}`)}>
+      <div className="w-full">
+        <div className="relative w-full h-56">
+          {data?.photos?.length > 0 && (
+            <Image
+              src={data.photos[0]}
+              layout="fill"
+              alt="listing"
+              className="rounded-lg object-cover"
+            />
+          )}
+          {userInfo && (
+            <div className="absolute top-2 right-2 z-20">
+              <IoMdHeart
+                style={{ stroke: "white", strokeWidth: "40" }}
+                className={`text-3xl ${wishlists?.includes(data.id) ? "text-airbnb-theme-color" : "text-[#00000099]"}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!wishlists?.includes(data.id)) addToWishList(data.id);
+                }}
               />
-              )}
-              {pathname === "/" && userInfo && (
-                <div className="absolute z-20 right-2 top-2">
-                  <IoMdHeart
-                  style={{ stroke: "white", strokeWidth: "40"}}
-                  className={`text-3xl ${
-                    wishlists?.includes(data.id)
-                    ? "text-airbnb-theme-color"
-                    : "text-[#00000099]"
-                  }`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-
-                    if (!wishlists?.includes(data.id)) addWishList();
-                    
-                  }}
-                  />
-                </div>
-              )}
+            </div>
+          )}
         </div>
-        <div>
-          <h3>{data.title}</h3>
-          <span>{data.price} S.P</span>
+        <div className="p-4">
+          <h3 className="text-lg font-semibold">{data.title}</h3>
+          <span className="text-sm text-gray-600">{data.price} S.P</span>
         </div>
       </div>
+      {isMyListing && (
+        <button
+          className="bg-airbnb-gradient py-2 px-4 text-white rounded-md"
+          onClick={() => removeUserListing(data.id)}
+        >
+          Delete
+        </button>
+      )}
+      {isWishList && (
+        <button
+          className="bg-airbnb-gradient py-2 px-4 text-white rounded-md"
+          onClick={() => setWishListsPage(wishListsPage.filter(id => id !== wishListId))}
+        >
+          Delete
+        </button>
+      )}
     </div>
-     {isMyListing && (
-      <button
-      className="bg-airbnb-gradient py-3 mt-5 px-5 text-white text-base font-medium rounded-md cursor-pointer w-80"
-      onClick={deleteListing}
-      >
-        Delete 
-      </button>
-     )}
-     {isWishList && (
-      <button
-         className="bg-airbnb-gradient py-3 mt-5 px-5 text-white text-base"
-         onClick={deleteWishlist}
-         >
-          Delete 
-         </button>
-     )}
-  </div>
   );
 };
 
