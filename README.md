@@ -1,5 +1,5 @@
 
-# nextjs-airbnb-clone
+# Syrenta
 
 # App Screenshots
 

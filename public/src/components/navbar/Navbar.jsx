@@ -135,8 +135,8 @@ return (
           </span>
           )}
         </li>
-      </ul>
-      </div>
+        </ul>
+        </div>
       </div>
       {isContextMenuVisibile && (
         <ContextMenu

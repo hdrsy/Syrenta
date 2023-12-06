@@ -10,13 +10,13 @@ const PlaceDetails = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-full flex-col gap-2 w-full">
-      <div className="flex flex-col gap-3">
-        <h2 className="font-semibold text-4xl">Confirm your address</h2>
+    <div className="flex justify-center items-center h-full flex-col gap-2 w-full px-4">
+      <div className="flex flex-col gap-3 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Confirm your address</h2>
         <p>Your address is only shared with guests after they've made a reservation.</p>
       </div>
       <div className="flex flex-col w-full items-center gap-3 h-full overflow-auto no-scrollbar pb-20 pt-5">
-        <div className="flex flex-col gap-2 w-[30%]">
+        <div className="flex flex-col gap-2 w-full max-w-md">
           <FormInput
             isListing
             name="neighborhood"
@@ -25,8 +25,6 @@ const PlaceDetails = () => {
             type="text"
             value={locationData?.neighborhood || ''}
           />
-        </div>
-        <div className="flex flex-col gap-2 w-[30%]">
           <FormInput
             isListing
             name="place"
@@ -43,8 +41,6 @@ const PlaceDetails = () => {
             type="text"
             value={locationData?.locality || ''}
           />
-        </div>
-        <div className="flex flex-col gap-2 w-[30%]">
           <FormInput
             isListing
             name="landmark"
@@ -61,8 +57,6 @@ const PlaceDetails = () => {
             type="text"
             value={locationData?.district || ''}
           />
-        </div>
-        <div className="flex flex-col gap-2 w-[30%]">
           <FormInput
             isListing
             name="postcode"

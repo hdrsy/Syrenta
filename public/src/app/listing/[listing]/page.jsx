@@ -33,10 +33,8 @@ useEffect(() => {
     {
       currentListing && <div> 
         <Navbar /> 
-          <div className="px-20 pt-10 text-airbnb-light-black grid gap-10"
-           style={{gridTemplateColumns: "70fr 30fr"}}
-          >
-            <div className="flex flex-col gap-5">
+        <div className="px-4 md:px-20 pt-10 text-airbnb-light-black grid gap-4 md:gap-10 md:grid-cols-3">
+            <div className="md:col-span-2 flex flex-col gap-5">
               <div className="flex flex-col gap-1">
                 <h2 className="text-5xl">{currentListing.title}</h2>
                 <span className="text-lg cursor-pointer underline">
@@ -72,7 +70,7 @@ useEffect(() => {
                    </div>
                 </div>
              </div>
-             <div>
+             <div  className="md:col-span-1">
                   <TripScheduler />
                 </div>
           </div>

@@ -38,12 +38,12 @@ export default function Page() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="h-[82.5vh] flex justify-start items-start">
-        <div className="relative overflow-x-auto shadow-lg sm:rounded-lg w-full m-20">
+      <div className="container mx-auto px-4 py-8 flex-grow">
+        <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
-            <thead className="text-xs text-gray-700vuppercase bg-gray-200">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-200">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Listing Name

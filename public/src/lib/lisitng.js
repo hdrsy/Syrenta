@@ -67,7 +67,8 @@ export const getUserWishlists = async (userId) => {
 
 export const addToWishlists = async (id, userId) => {
         const query = {
-            listing: { id },
+            
+             listing: { id },
             user: { id: userId },
         };
         const result = await post(createUrl("/api/wishlists"), {...query});
@@ -75,6 +76,8 @@ export const addToWishlists = async (id, userId) => {
            return alert("Could not create wishlist");
         }
             return result.data;
+           
+
     };
         
 

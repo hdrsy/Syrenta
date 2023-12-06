@@ -17,22 +17,28 @@
     max-width: none !important;
   }
 
+  /* Ensure card containers stack vertically on smaller screens */
   .card-container {
     display: flex;
     flex-direction: column;
+  }
+
+  /* Adjust font sizes for readability on smaller screens */
+  body, h1, h2, h3, p {
+    font-size: 90%;
   }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-} */
+}
 
-/* Hide scrollbar for IE, Edge and Firefox
+Hide scrollbar for IE, Edge and Firefox
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
-  /* scrollbar-width: none; Firefox */
-/* } */ */
+  /* scrollbar-width: none; /* Firefox */
+/* } */ */ */
 
 .control-panel {
   position: absolute;

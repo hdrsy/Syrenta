@@ -22,35 +22,36 @@ const Overview = () => {
       image: "/overview3.webp",
     },
   ]
-  return <div className="flex h-full justify-between items-center px-32 gap-20">
-    <div>
-      <strong>
-        <h1 className="text-5xl leading-normal text-airbnb-light-black">
-          {mainTitle}
-        </h1>
-      </strong>
-    </div>
-    <ul className="flex flex-col gap-16">
-      {data.map(({description,title,image},index)=>(
-        <li
-         key={title}
-          className="flex items-center justify-start gap-6"> 
-          <strong className="text-2xl pt-5 text-airbnb-light-black">
-             <h3>{index+1}</h3>
-          </strong>
-          <div className="pt-5">
-            <strong className="text-2xl text-airbnb-light-black">
-                 <h3>{title}</h3>
+  return (
+    <div className="flex flex-col md:flex-row h-full justify-between items-center px-5 md:px-32 gap-10 md:gap-20">
+      <div className="text-center md:text-left">
+        <strong>
+          <h1 className="text-3xl md:text-5xl leading-normal text-airbnb-light-black">
+            {mainTitle}
+          </h1>
+        </strong>
+      </div>
+      <ul className="flex flex-col gap-10">
+        {data.map(({ description, title, image }, index) => (
+          <li key={title} className="flex flex-col md:flex-row items-center justify-start gap-6">
+            <strong className="text-2xl pt-5 text-airbnb-light-black">
+              <h3>{index + 1}</h3>
             </strong>
+            <div className="pt-5">
+              <strong className="text-xl md:text-2xl text-airbnb-light-black">
+                <h3>{title}</h3>
+              </strong>
               <p className="text-airbnb-light-gray">{description}</p>
-          </div>
-          <div className="relative w-48 h-32 object-cover">
-            <Image src={image} alt="overview" fill/>
-          </div>
-        </li>
-     ))}
-    </ul>
-  </div>;
+            </div>
+            <div className="relative w-full md:w-48 h-32 object-cover">
+              <Image src={image} alt="overview" layout="fill" objectFit="cover" />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
+
 
 export default Overview;

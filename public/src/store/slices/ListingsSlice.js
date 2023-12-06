@@ -1,10 +1,9 @@
 export const createLisitingSlice = (set,get) => ({
-    listing: [],
+    listings: [],
     isMapView: false,
     userListings:[],
     wishlists: [],
     wishListsPage: [],
-    currentListing:undefined,
     setListings: (listings) => set({ listings }),
     setIsMapView: () => set({ isMapView: !get().isMapView}),
     setUserListings: (userListings) => set({ userListings }),

@@ -23,23 +23,20 @@ const { userInfo,userListings,setUserListings } = useAppStore ();
      }
    }, [userInfo]);
 
-  return (
-   <div>
-    <Navbar />
-
-    <div className="flex justify-start items-start"> 
-    <div className="grid grid-cols-4 px-10 gap-3 py-10 w-full items-start">
-
-    
-    {
-       userListings.map((listing,index)=> (
-       <ListingCard data={listing} isMyListing key={listing.id}/>
-       ))}
-       </div>
-       </div>
-    <Footer />
-
-  </div>
+   return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {userListings.map((listing, index) => (
+              <ListingCard data={listing} isMyListing key={listing.id} />
+            ))}
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
