@@ -49,7 +49,7 @@ const ListingCard = ({
   };  
 
   return (
-    <div className="card flex flex-col items-center justify-center gap-4 cursor-pointer w-full max-w-md mx-auto"
+    <div className="card flex flex-col items-center justify-center gap-8 cursor-pointer w-full max-w-lg mx-auto"
          onClick={()=>router.push(`/listing/${data.id}`)}
          >
       <div className="w-full">

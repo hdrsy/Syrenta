@@ -52,7 +52,9 @@ const MapView = () => {
           )}
         </GoogleMap>
       </LoadScript>
+      
     </div>
+  
   );
 };
 

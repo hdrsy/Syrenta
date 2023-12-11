@@ -11,7 +11,7 @@ export const createLisitingSlice = (set,get) => ({
         const listings = get().userListings;
         const index = listings.findIndex((list) => list.id === listing);
         if (index !== -1) {
-            listing.splice(index, 1);
+            listing.slice(index, 1);
         }
         set({ userListings: listings});
     },
