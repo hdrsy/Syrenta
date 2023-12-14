@@ -24,3 +24,7 @@ code {
   color: var(--primary);
   text-decoration: underline;
 }
+
+.gm-style .gm-style-iw-c{
+  min-width: 300px !important;
+}
